@@ -104,28 +104,28 @@ if __name__ == '__main__':
             for des in resi_nodes:
                 mu_t =  travel_time_base[(origin, des)] 
                 sigma = 10
-                s = np.random.normal(mu_p, sigma, 20)
+                s = np.random.normal(mu_t, sigma, 20)
                 OutputFile.write("Origin " + str(origin) + " Des: " + str(des) + " traffic time: " + str(s) + "\n")
         
         for origin in resi_nodes:
             for des in comm_nodes:
                 mu_t = travel_time_base[(origin, des)]  * resi_comm_df["traffic time"][t]
                 sigma = 10
-                s = np.random.normal(mu_p, sigma, 20)
+                s = np.random.normal(mu_t, sigma, 20)
                 OutputFile.write("Origin " + str(origin) + " Des: " + str(des) + " traffic time: " + str(s) + "\n")
 
         for origin in comm_nodes:
             for des in comm_nodes:
                 mu_t =  travel_time_base[(origin, des)] *2
                 sigma = 10
-                s = np.random.normal(mu_p, sigma, 20)
+                s = np.random.normal(mu_t, sigma, 20)
                 OutputFile.write("Origin " + str(origin) + " Des: " + str(des) + " traffic time: " + str(s) + "\n")
         
         for origin in comm_nodes:
             for des in resi_nodes:
                 mu_t = travel_time_base[(origin, des)]  * comm_res_df["traffic time"][t]
                 sigma = 10
-                s = np.random.normal(mu_p, sigma, 20)
+                s = np.random.normal(mu_t, sigma, 20)
                 OutputFile.write("Origin " + str(origin) + " Des: " + str(des) + " traffic time: " + str(s) + "\n")
 
         
